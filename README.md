@@ -51,31 +51,30 @@ petrescue/
 
 ## ⚙️ Setup Instructions (for Mentor)  
 
-To run the project locally:  
+    To run the project locally:  
 
 1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/naazle16/petrescue.git
+    git clone https://github.com/naazle16/petrescue.git
 2. **Move into the project folder**
 
-cd petrescue
+    cd petrescue
 
 
 3. **(Optional) Create and activate virtual environment**
 
-python -m venv venv
-venv\Scripts\activate   # on Windows
+    python -m venv venv
+    venv\Scripts\activate   # on Windows
 
 
 4. **Install Django**
 
-pip install django
+    pip install django
 
 
 5. **Run the server**
 
-python manage.py runserver
+    python manage.py runserver
 
 
 6. **Open in browser**
-👉 http://127.0.0.1:8000/
+    👉 http://127.0.0.1:8000/

@@ -1,10 +1,69 @@
 {% extends 'base.html' %}
 {% block title %}Home - PetRescue{% endblock %}
-{% block content %}
-<div class="text-center mt-5">
-  <h1 class="display-5 text-primary fw-bold">Welcome to PetRescue 🐶🐱</h1>
-  <p class="lead mt-3">Connecting kind hearts to homeless pets — Adopt, Rescue, and Love ❤️</p>
-  <a href="/login" class="btn btn-warning btn-lg mt-4">Get Started →</a>
-</div>
-{% endblock %}
 
+{% block content %}
+<div class="container text-center py-5">
+  <!-- Hero Section -->
+  <div class="hero-section py-5">
+    <h1 class="display-5 fw-bold text-gold mb-3">🐾 Welcome to PetRescue</h1>
+    <p class="text-light fs-5">
+      Connecting lost pets with their families — with care, compassion, and technology.
+    </p>
+    <a href="{% url 'report_found_pet' %}" class="btn btn-gold mt-4 px-5 py-2">Report a Found Pet</a>
+  </div>
+
+  <!-- Divider -->
+  <hr class="my-5 border-gold">
+
+  <!-- Feature Section -->
+  <div class="row justify-content-center text-light">
+    <div class="col-md-4 mb-4">
+      <div class="card bg-dark border-0 shadow-lg h-100">
+        <div class="card-body">
+          <h4 class="text-gold mb-3">🐶 Report Found Pets</h4>
+          <p>Help reunite a pet with its owner by submitting found pet details and pictures.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card bg-dark border-0 shadow-lg h-100">
+        <div class="card-body">
+          <h4 class="text-gold mb-3">📍 Track Lost Pets</h4>
+          <p>Stay updated on pets lost in your area and assist in finding them quickly.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card bg-dark border-0 shadow-lg h-100">
+        <div class="card-body">
+          <h4 class="text-gold mb-3">❤️ Join the Community</h4>
+          <p>Be part of a caring network of animal lovers helping pets find their way home.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .text-gold { color: #F1C40F; }
+  .border-gold { border-color: #F1C40F !important; }
+  .btn-gold {
+    background-color: #F1C40F;
+    color: #000;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  .btn-gold:hover {
+    background-color: #d4ac0d;
+    color: #fff;
+  }
+  .hero-section {
+    background: linear-gradient(145deg, #1e1e1e, #2c2c2c);
+    border: 1px solid #F1C40F33;
+    border-radius: 20px;
+    padding: 60px 20px;
+    box-shadow: 0 0 20px #000;
+  }
+</style>
+{% endblock %}

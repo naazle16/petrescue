@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Report Found Pet - PetRescue{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="card shadow-lg mx-auto p-5" style="max-width: 600px; background-color: #1e1e1e; border: 1px solid #F1C40F;">
+    <h2 class="text-center mb-4 text-gold fw-bold">🐶 Report a Found Pet</h2>
+
+    {% if message %}
+      <div class="alert alert-success text-center">{{ message }}</div>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-label text-light">Pet Name</label>
+        <input type="text" name="pet_name" class="form-control bg-dark text-light border-0" placeholder="Enter pet name" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label text-light">Location Found</label>
+        <input type="text" name="location" class="form-control bg-dark text-light border-0" placeholder="Where did you find it?" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label text-light">Description</label>
+        <textarea name="description" class="form-control bg-dark text-light border-0" rows="3" placeholder="Describe the pet (color, breed, collar, etc.)" required></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label text-light">Upload Image</label>
+        <input type="file" name="pet_image" class="form-control bg-dark text-light border-0">
+      </div>
+
+      <button type="submit" class="btn btn-gold w-100">Submit Report</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
